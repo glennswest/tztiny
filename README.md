@@ -47,13 +47,17 @@ The release profile is tuned for size (`opt-level = "z"`, LTO, stripped,
 
 ## Size
 
-Built against tzdata 2025b on AlmaLinux (x86_64, glibc):
+Built against tzdata 2025b (x86_64 Linux, glibc):
 
 | what | size |
 |---|---|
-| full `/usr/share/zoneinfo` tree | 4.2 MB, ~1200 files |
-| `tztiny` binary (database included) | ~0.6 MB, 1 file |
+| full `/usr/share/zoneinfo` tree | 4.2 MB on disk, 599 zones |
+| `tztiny` binary (all 599 zones included) | **463 KB**, 1 file |
+| embedded database (341 unique blobs, deflated) | 103 KB of that |
 | `tztiny set` output (`/etc/localtime`) | one TZif file (~1–3 KB) |
+
+Extracted zones are byte-identical to the originals (`tztiny install --all`
+reproduces the whole tree).
 
 ## How it works
 
