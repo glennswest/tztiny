@@ -18,4 +18,7 @@
   2025b vs 4.2 MB zoneinfo tree; verified byte-identical output on dev.g8.lo.
 
 ## [Unreleased]
+
+### 2026-08-31
+- **docs:** Sister-project links (tinystorm, tinycloudinit); MIT LICENSE file added.
 <!-- New unreleased changes go here -->

@@ -68,3 +68,14 @@ reproduces the whole tree).
   `tztiny version`.
 - At runtime the stream is decompressed once and the selected blobs are
   written with their original directory structure.
+
+## Sister projects
+
+- **[tinystorm](https://github.com/glennswest/tinystorm)** — the tiniest
+  practical Fedora-based bootable cloud image (97 MB qcow2). Its images run
+  UTC-only; tztiny is how they get full timezone support back without
+  shipping tzdata.
+- **[tinycloudinit](https://github.com/glennswest/tinycloudinit)** — a 682 KB
+  static musl Rust replacement for cloud-init (NoCloud cidata seeds: users,
+  ssh keys, sudo, write_files, runcmd, hostname). The provisioner inside
+  tinystorm's smallest profile.
