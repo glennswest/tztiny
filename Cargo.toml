@@ -1,0 +1,19 @@
+[package]
+name = "tztiny"
+version = "0.1.0"
+edition = "2021"
+description = "Tiny embedded IANA timezone database installer for small Linux images"
+license = "MIT"
+
+[dependencies]
+miniz_oxide = { version = "0.8", default-features = false, features = ["with-alloc"] }
+
+[build-dependencies]
+miniz_oxide = "0.8"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
