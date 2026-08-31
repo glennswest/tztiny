@@ -224,7 +224,9 @@ mod tests {
         assert!(matches("America/", "America/Chicago"));
         assert!(matches("America/Chicago", "America/Chicago"));
         assert!(!matches("America", "Americas/Nowhere"));
-        assert!(!matches("America/Chicago", "America/Chicago/Extra"));
+        // a pattern selects itself and its subtree
+        assert!(matches("America/Chicago", "America/Chicago/Extra"));
+        assert!(!matches("America/Chicago", "America/Chicag"));
         let sel = select(&["America/Argentina".to_string()]);
         assert!(sel.len() > 5);
         assert!(sel.iter().all(|(n, _)| n.starts_with("America/Argentina/")));
